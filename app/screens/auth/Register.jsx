@@ -10,7 +10,7 @@ export default function Register() {
     <View className="bg-white h-full w-full">
       <StatusBar style="light" />
       <Image
-        className="h-full w-full absolute"
+        className="h-[90%] w-full absolute"
         source={require("../../../assets/images/background.png")}
       />
 
@@ -46,7 +46,13 @@ export default function Register() {
             entering={FadeInDown.duration(1000).springify()}
             className="bg-black/5 p-5 rounded-2xl w-full"
           >
-            <TextInput placeholder="Username" placeholderTextColor={"gray"} />
+            <TextInput placeholder="First Name" placeholderTextColor={"gray"} />
+          </Animated.View>
+          <Animated.View
+            entering={FadeInDown.duration(1000).springify()}
+            className="bg-black/5 p-5 rounded-2xl w-full"
+          >
+            <TextInput placeholder="Last Name" placeholderTextColor={"gray"} />
           </Animated.View>
           <Animated.View
             entering={FadeInDown.delay(200).duration(1000).springify()}
