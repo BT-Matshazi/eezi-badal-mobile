@@ -1,15 +1,26 @@
-import React from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Login
+ from './screens/auth/Login';
+import Register from "./screens/auth/Register";
 
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View className="flex items-center justify-center flex-col min-h-screen">
-      <View>
-        <Text className="font-semibold mb-4 text-2xl text-gray-900 dark:text-white">
-          Eezi-Badal
-        </Text>
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Login"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
